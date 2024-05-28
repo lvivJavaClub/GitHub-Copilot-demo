@@ -10,17 +10,31 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
+/**
+ * Controller for User entity.
+ */
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
+    /**
+     * Get list of all users.
+     *
+     * @return list of users
+     */
     @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
+    /**
+     * Get user info by id.
+     *
+     * @param id user id
+     * @return user
+     */
     @GetMapping("/{id}")
     public User getUser(@NonNull @PathVariable final Long id) {
         return userService.getUser(id);

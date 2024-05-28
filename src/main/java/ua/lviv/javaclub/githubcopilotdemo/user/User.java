@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 import java.time.OffsetDateTime;
 
 
+/**
+ * User entity.
+ */
 @Builder
 @Getter
 @Entity(name = "users")
