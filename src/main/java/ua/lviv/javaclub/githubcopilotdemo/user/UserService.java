@@ -17,16 +17,19 @@ import java.util.List;
 public class UserService {
     private final UserRepository userRepository;
 
-    // TODO: 2 Add documentation
     @Transient
-    public User getUser(@NonNull final Long id) {
+    public User getUser(@NonNull final Long id) {  // TODO: 2) Add documentation
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    // TODO: 1 Auto fix
+    /**
+     * Get list of all users.
+     *
+     * @return list of users
+     */
     @Transient
-    public List<User> getUsers() {
+    public List<User> getUsers() {  // TODO: 1) Auto fix
         int i = 0;
         List<Long> a = userRepository.findAllIdsBy();
         List<User> r = new ArrayList<>();

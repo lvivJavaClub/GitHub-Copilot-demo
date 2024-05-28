@@ -39,4 +39,6 @@ public class UserController {
     public User getUser(@NonNull @PathVariable final Long id) {
         return userService.getUser(id);
     }
+
+    // TODO 4) Add to the REST API the ability to change the status from CREATED to VALID
 }
