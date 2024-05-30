@@ -37,4 +37,12 @@ class UserServiceTest {
         assertNotNull(actual);
         assertEquals(user, actual);
     }
+
+    @Test
+    void getUsers() {
+        userService.getUsers();
+        verify(userRepository).findAllBy();
+    }
+
+
 }

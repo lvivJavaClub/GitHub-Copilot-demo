@@ -25,4 +25,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
      * @return list of users ids
      */
     List<Long> findAllIdsBy();
+
+
+    User findFirstByOrderByAgeDesc();
 }
