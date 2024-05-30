@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,25 +17,23 @@ public class UserService {
     private final UserRepository userRepository;
 
     @Transient
-    public User getUser(@NonNull final Long id) {  // TODO: 2) Add documentation
+    public User getUser(@NonNull final Long id) {  // TODO: 2.1) Add documentation
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
     /**
-     * Get list of all users.
+     * Get list of all JavaClub users.
+     *
+     * <p>Let's become the best together</p>
      *
      * @return list of users
      */
     @Transient
-    public List<User> getUsers() {  // TODO: 1) Auto fix
-        int i = 0;
-        List<Long> a = userRepository.findAllIdsBy();
-        List<User> r = new ArrayList<>();
-        for (; i < a.size(); i++) {
-            r.add(userRepository.findById(a.get(i)).get());
-        }
-        i ++;
-        return r;
+    public List<User> getUsers() { // TODO: 1.1) Auto fix
+        return userRepository.findAllBy();
     }
+
+    // TODO: 2,3) Add Method to get oldest users
+    // User getOldestUser() getOldesUser()
 }

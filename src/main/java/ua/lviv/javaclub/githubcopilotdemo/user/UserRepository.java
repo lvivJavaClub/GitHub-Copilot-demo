@@ -13,14 +13,14 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long> {
 
     /**
-     * Find of all users.
+     * Find of all JavaClub users.
      *
      * @return list of users
      */
     List<User> findAllBy();
 
     /**
-     * Find of all users ids.
+     * Find of all JavaClub users ids.
      *
      * @return list of users ids
      */

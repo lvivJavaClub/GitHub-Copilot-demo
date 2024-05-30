@@ -20,7 +20,13 @@ public class UserController {
     private final UserService userService;
 
     /**
-     * Get list of all users.
+     * Get list of all JavaClub users.
+     *
+     * <p>Example:
+     * <pre>{@code
+     * curl -X GET http://localhost:8080/users
+     * }</pre>
+     * </p>
      *
      * @return list of users
      */
@@ -29,16 +35,12 @@ public class UserController {
         return userService.getUsers();
     }
 
-    /**
-     * Get user info by id.
-     *
-     * @param id user id
-     * @return user
-     */
+    // TODO: 2.2) Add documentation
     @GetMapping("/{id}")
     public User getUser(@NonNull @PathVariable final Long id) {
         return userService.getUser(id);
     }
 
-    // TODO 4) Add to the REST API the ability to change the status from CREATED to VALID
+    // TODO: 4.0) create a 4.2 and 4.3 tasks
+    // TODO: 4.1) Add to the REST API the ability to change the status from CREATED to VALID.
 }
